@@ -99,3 +99,21 @@ Answer:
 Because Rust does not allow direct mutation of static variables because it enforces safety and prevents data races at compile time. Unlike Java, where mutable statics are allowed but can be risky, Rust are required to use tools like lazy_static with RwLock or similar to make sure shared data is accessed safely across threads.
 
 #### Reflection Subscriber-2
+
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+
+Answer: 
+
+I haven’t really explored parts outside of the tutorial like src/lib.rs. I mainly focused on following the steps provided to make sure everything works correctly, especially the service and controller implementation. I prioritized understanding the core flow of the application first before trying to explore other parts of the code.
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+
+Answer:
+
+The Observer pattern makes it easy to add more subscribers because each receiver can simply register itself without changing the existing system. The publisher just sends notifications to all registered subscribers, so adding more instances is straightforward. However, if there are multiple instances of the Main app (publisher), it becomes more complicated because each publisher may need to manage its own list of subscribers, making synchronization and consistency harder.
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+
+Answer:
+
+I haven’t tried creating my own tests or improving the Postman collection yet. So far, I only used the existing setup from the tutorial to verify that the endpoints work as expected. I think adding tests or better documentation would be useful to improve reliability and clarity, but I haven’t explored that part yet.
